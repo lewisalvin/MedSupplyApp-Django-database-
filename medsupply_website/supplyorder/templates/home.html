@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Wuddup Doe!!</h1>
+<br/>
+    {% for customer in thisCustomer %}
+        <p>{{customer.id}}, {{customer.firstName}}</p>
+    {% endfor %}
+{% endblock %}
