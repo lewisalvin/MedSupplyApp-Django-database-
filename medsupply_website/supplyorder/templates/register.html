@@ -4,10 +4,29 @@
     <center>
         <h1>Register</h1>
         <br/><br/>
-        <form action="" method="POST">
-            {% csrf_token %}
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+{% endif %}
+        {% if submitted %}
+            You Successfully Registered!
 
-            <input type="submit" value="Submit" class="btn btn-success"
-        </form>
+        {% else %}
+
+        
+            <form action="" method="POST">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+                <br/>
+                <br/>
+                <br/>
+
+                <input type="submit" value="Submit" class="btn btn-secondary">
+            </form>
+        {% endif %}
     </center>
 {% endblock %}

@@ -33,8 +33,7 @@ class Orders(models.Model):
 
 
 class Products(models.Model):
-    productID = models.CharField(max_length=100)
-    productSKU = models.CharField(max_length=100)
+    productSKU = models.CharField(max_length=100, unique=True)
     productName = models.CharField(max_length=100)
     productPrice = models.CharField(max_length=100)
     productStock = models.CharField(max_length=100)

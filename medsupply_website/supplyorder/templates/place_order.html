@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <center>
+        <h1>Place Order</h1>
+        <br/>
+        <table class="table table-striped table-bordered table-hover">
+            {% for products in showProducts %}
+                <tr>
+                    <td>
+                        <a href="{% url 'product_breakdown' products.id %}">{{products}}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+{% endblock %}
