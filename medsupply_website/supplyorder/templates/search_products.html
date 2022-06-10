@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br/>
+    {% if searched %}
+        <h1>You searched for {{searched}}</h1>
+        <br/>
+        {% for product in products %}
+            <a href="{% url 'product_breakdown' product.id %}"  >{{ product }}</a><br/>
+        {% endfor %}
+    {% else %}
+        <h1>You forgot to search!!</h1>
+    {% endif %}
+    
+{% endblock %}
